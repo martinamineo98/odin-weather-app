@@ -1,0 +1,214 @@
+
+/* -------------------------------------------------------- VARIABLES */
+
+:root {
+	--sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+	--serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	--monospace: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	--main-font-family: var(--sans-serif);
+}
+
+/* ------------------------------------------------------------ RESET */
+
+*,
+*::before,
+*::after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---------------------------------------------------------- GENERAL */
+
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+body,
+form {
+	font: calc(1.6rem + .5vmin) var(--main-font-family);
+}
+
+input,
+button {
+	background-color: var(--input-background-color, hsl(0deg, 0%, 95%));
+	border-radius: 15px;
+	padding: 1ch 2ch;
+}
+
+button {
+	transition: all .25s ease-in-out;
+}
+
+button:hover {
+	cursor: pointer;
+	transform: scale(1.125);
+}
+
+/* -------------------------------------------------------- CONTAINER */
+
+.container {
+	display: grid;
+	gap: 15px;
+	grid-auto-flow: row;
+	height: 100vh;
+	width: 100vw;
+	place-content: center;
+	place-items: center;
+}
+
+/* ----------------------------------------- API FORM & LOCATION FORM */
+
+#form-api {
+	display: grid;
+	gap: 15px;
+	grid-auto-flow: row;
+	max-width: 20vw;
+	padding: 30px;
+	place-content: center;
+	place-items: center;
+}
+
+#form-api.isInvisible {
+	display: none;
+}
+
+/* ---------------------------------------------------------- WEATHER */
+
+.weather {
+	display: none;
+}
+
+.weather.isVisible {
+	display: grid;
+	gap: 15px;
+	grid-auto-flow: row;
+	place-content: center;
+	place-items: center;
+}
+
+.weather-location {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.weather-main {
+	display: grid;
+	grid-auto-flow: column;
+	place-content: center;
+	place-items: center;
+}
+
+.weather-icon {
+	aspect-ratio: 1;
+	width: 100px;
+}
+
+.weather-temperature {
+	grid-row: 2 / 3;
+	grid-column: 1 / 3;
+}
+
+.weather-temperature > span {
+	display: none;
+}
+
+.weather-temperature > span.isVisible {
+	display: inline-block;
+}
+
+.weather-temperature-slider {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	padding: 15px;
+}
+
+input#weather-temperature-scale {
+	height: 0;
+	visibility: hidden;
+	width: 0;
+}
+
+input#weather-temperature-scale:checked + label {
+	background-color: hsl(250deg, 50%, 50%);
+}
+
+input#weather-temperature-scale:checked + label::after {
+	border-color: hsl(250deg, 50%, 50%);
+	content: 'F';
+	left: calc(var(--width) - var(--width-after));
+}
+
+label[for='weather-temperature-scale'] {
+	--width: 80px;
+	aspect-ratio: 2/1;
+	background-color: var(--weather-temperature-scale-background-color, #EEE);
+	border-radius: 50px;
+	display: block;
+	position: relative;
+	text-indent: -9999px;
+	transition: all .25s ease-in-out;
+	width: var(--width);
+}
+
+label[for='weather-temperature-scale']::after {
+	--border-width: 5px;
+	--width-after: calc(var(--width) / 2);
+	aspect-ratio: 1;
+	background-color: var(--weather-temperature-scale-after-background-color, #FFF);
+	border: var(--border-width) solid var(--weather-temperature-scale-background-color, #EEE);
+	border-radius: 50%;
+	content: 'C';
+	display: flex;
+	font-size: 1em;
+	font-weight: bold;
+	left: 0;
+	place-content: center;
+	place-items: center;
+	position: absolute;
+	text-align: center;
+	text-indent: 0;
+	top: 0;
+	transition: all .25s ease-in-out;
+	width: var(--width-after);
+}
+
+/* ----------------------------------------------------------- FOOTER */
+
+footer {
+	display: grid;
+	grid-row: 3 / 4;
+	place-content: center;
+	place-items: center;
+	width: 100%;
+	font-size: .85em;
+}
+
+footer img {
+	width: 200px;
+}

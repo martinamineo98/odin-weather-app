@@ -1,2 +1,10 @@
-# odin-weather-app
-The Odin Project - Full Stack JavaScript - Weather App
+# Weather
+
+![Screenshot_2022-08-29_20-01-29](https://user-images.githubusercontent.com/80021258/187267760-7e9eac02-3d07-44cb-b2d3-ab167370a526.png)
+
+This is a simple Weather App created while following The Odin Project's Full Stack Foundation Course.
+The code is under MIT License, while the data, the logos and the images are property of OpenWeather,
+please check on their website for more.
+
+![OpenWeather-Master-Logo RGB](https://openweathermap.org/)
+Weather data provided by [OpenWeather](https://openweathermap.org/).
