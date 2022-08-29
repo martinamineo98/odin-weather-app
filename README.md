@@ -6,5 +6,5 @@ This is a simple Weather App created while following The Odin Project's Full Sta
 The code is under MIT License, while the data, the logos and the images are property of OpenWeather,
 please check on their website for more.
 
-![OpenWeather-Master-Logo RGB](https://user-images.githubusercontent.com/80021258/187268238-451f6178-9a47-49d6-aff4-d926183cc1bc.png)
+![OpenWeather-Master-Logo RGB](https://user-images.githubusercontent.com/80021258/187268238-451f6178-9a47-49d6-aff4-d926183cc1bc.png)<br>
 Weather data provided by [OpenWeather](https://openweathermap.org/).
